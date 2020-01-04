@@ -1,4 +1,6 @@
-# crontab命令
+# crontab命令  
+
+原文：http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html
 
 **一、crond简介**
 
@@ -17,7 +19,6 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=""HOME=/
 
 # run-parts
-
 51 * * * * root run-parts /etc/cron.hourly
 24 7 * * * root run-parts /etc/cron.daily
 22 4 * * 0 root run-parts /etc/cron.weekly
@@ -25,13 +26,9 @@ MAILTO=""HOME=/
 [root@localhost ~]#
 ```
 
-
-
 前四行是用来配置crond任务运行的环境变量，第一行SHELL变量指定了系统要使用哪个shell，这里是bash，第二行PATH变量指定了系统执行命令的路径，第三行MAILTO变量指定了crond的任务执行信息将通过电子邮件发送给root用户，如果MAILTO变量的值为空，则表示不发送任务执行信息给用户，第四行的HOME变量指定了在执行命令或者脚本时使用的主目录。第六至九行表示的含义将在下个小节详细讲述。这里不在多说。
 
 用户任务调度：用户定期要执行的工作，比如用户数据备份、定时邮件提醒等。用户可以使用 crontab 工具来定制自己的计划任务。所有用户定义的crontab 文件都被保存在 /var/spool/cron目录中。其文件名与用户名一致。
-
-
 
 **使用者权限文件**：
 
@@ -64,8 +61,6 @@ MAILTO=""HOME=/
 说明：
 
 所有用户crontab文件存放的目录,以用户名命名
-
-
 
 **crontab文件的含义：**
 
@@ -450,3 +445,7 @@ export RUN_CONF=/home/d139/conf/platform/cbp/cbp_jboss.conf
 千万别乱运行crontab -r。它从Crontab目录（/var/spool/cron）中删除用户的Crontab文件。删除了该用户的所有crontab都没了。
 
 在crontab中%是有特殊含义的，表示换行的意思。如果要用的话必须进行转义\%，如经常用的date ‘+%Y%m%d’在crontab里是不会执行的，应该换成date ‘+\%Y\%m\%d’。
+
+
+
+原文：

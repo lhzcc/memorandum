@@ -184,7 +184,7 @@ EDITOR=vi; export EDITOR
 在上面的例子中，系统将每隔1 5分钟向控制台输出一次当前时间。如果系统崩溃或挂起，从最后所显示的时间就可以一眼看出系统是什么时间停止工作的。在有些系统中，用tty1来表示控制台，可以根据实际情况对上面的例子进行相应的修改。为了提交你刚刚创建的crontab文件，可以把这个新创建的文件作为cron命令的参数：
 
   ```shell
- $ crontab davecron
+$ crontab davecron
   ```
 
 现在该文件已经提交给cron进程，它将每隔1 5分钟运行一次。
@@ -213,7 +213,7 @@ $ crontab -l > $HOME/mycron
    如果希望添加、删除或编辑crontab文件中的条目，而E D I TO R环境变量又设置为v i，那么就可以用v i来编辑crontab文件，相应的命令为：
 
    ```shell
-  $ crontab -e
+$ crontab -e
    ```
 
 可以像使用v i编辑其他任何文件那样修改crontab文件并退出。如果修改了某些条目或添加了新的条目，那么在保存该文件时， c r o n会对其进行必要的完整性检查。如果其中的某个域出现了超出允许范围的值，它会提示你。
@@ -445,7 +445,3 @@ export RUN_CONF=/home/d139/conf/platform/cbp/cbp_jboss.conf
 千万别乱运行crontab -r。它从Crontab目录（/var/spool/cron）中删除用户的Crontab文件。删除了该用户的所有crontab都没了。
 
 在crontab中%是有特殊含义的，表示换行的意思。如果要用的话必须进行转义\%，如经常用的date ‘+%Y%m%d’在crontab里是不会执行的，应该换成date ‘+\%Y\%m\%d’。
-
-
-
-原文：

@@ -82,7 +82,7 @@ MAILTO=""HOME=/
 >
 > command：要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。
 
-​	![img](https://images0.cnblogs.com/blog/34483/201301/08090352-4e0aa3fe4f404b3491df384758229be1.png) 
+​	![img](../images/linux/08090352-4e0aa3fe4f404b3491df384758229be1.png) 
 
 **在以上各个字段中，还可以使用以下特殊字符：**
 
